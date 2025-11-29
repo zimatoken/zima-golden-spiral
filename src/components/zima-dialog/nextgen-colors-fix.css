@@ -1,0 +1,48 @@
+﻿/* ICE GLASS PREMIUM — AI bubble (left side) */
+.msg-ai {
+  align-self:flex-start;
+  color: #ffffff; /* ИЗМЕНЕНО: был #001924 (черный), стал #ffffff (белый) */
+  background:
+    linear-gradient(180deg, rgba(220,245,255,0.34), rgba(200,235,255,0.30));
+  border: 1px solid rgba(200,240,255,0.28);
+  box-shadow:
+    0 6px 18px rgba(40,150,240,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.32);
+  /* subtle frosted texture with overlay */
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+    radial-gradient(800px 200px at 10% 10%, rgba(255,255,255,0.02), transparent 6%);
+}
+
+/* subtle icon or initials (small) inside avatars */
+.avatar .initials {
+  font-size:12px;
+  font-weight:700;
+  color: #ffffff; /* ИЗМЕНЕНО: был rgba(2,30,40,0.9) (темный), стал #ffffff (белый) */
+}
+
+/* AI avatar  icy sphere */
+.avatar-ai {
+  background: radial-gradient(circle at 30% 25%, #f4ffff, #bfeeff 30%, #8fcfff 60%, rgba(120,190,255,0.14) 100%);
+  border: 1px solid rgba(220,250,255,0.5);
+  box-shadow: 0 6px 18px rgba(100,210,255,0.08), inset 0 -6px 18px rgba(255,255,255,0.12);
+}
+
+/* user avatar  dark graphite sphere */
+.avatar-user {
+  background: radial-gradient(circle at 30% 30%, #1b2430 0%, #0c1420 60%, rgba(8,12,16,1) 100%);
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 2px 8px rgba(255,255,255,0.02);
+}
+
+/* USER bubble (right side)  dark and dense */
+.msg-user {
+  margin-left:auto;
+  align-self:flex-end;
+  color: #ffffff; /* ИЗМЕНЕНО: был #e6f7ff (светло-синий), стал #ffffff (белый) */
+  background: linear-gradient(180deg, rgba(7,12,20,0.84), rgba(10,16,28,0.9));
+  border: 1px solid rgba(90,130,180,0.06);
+  box-shadow:
+    0 6px 26px rgba(0,40,80,0.55),
+    inset 0 -1px 0 rgba(255,255,255,0.02);
+}
