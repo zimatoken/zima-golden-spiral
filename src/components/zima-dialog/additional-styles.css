@@ -1,0 +1,89 @@
+﻿
+/* Стили для выбора режима */
+.mode-selector {
+  padding: 20px;
+  border-bottom: 1px solid var(--zima-border, #1E293B);
+}
+
+.mode-selector h4 {
+  margin: 0 0 16px 0;
+  color: var(--zima-blue, #88D7FF);
+  font-size: 16px;
+}
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.mode-card {
+  padding: 16px;
+  background: var(--zima-card-bg, #08172b);
+  border: 1px solid var(--zima-border, #1E293B);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-card:hover {
+  border-color: var(--zima-blue, #88D7FF);
+  transform: translateY(-2px);
+}
+
+.mode-card--active {
+  border-color: var(--zima-blue, #88D7FF);
+  background: rgba(136, 215, 255, 0.1);
+}
+
+.mode-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.mode-title {
+  font-weight: 600;
+  color: #E2E8F0;
+  margin-bottom: 4px;
+}
+
+.mode-description {
+  font-size: 12px;
+  color: #94A3B8;
+  line-height: 1.4;
+}
+
+/* Индикатор подключения */
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--zima-card-bg, #08172b);
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.connected {
+  background: #10B981;
+}
+
+.status-dot.connecting {
+  background: #F59E0B;
+  animation: pulse 1.5s infinite;
+}
+
+.status-dot.disconnected {
+  background: #EF4444;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
