@@ -2,6 +2,8 @@
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 import TypingIndicator from './TypingIndicator';
+import { TopFeatures } from './TopFeatures';
+import { BottomActions } from './BottomActions';
 import './styles.css';
 
 interface Message {
@@ -15,7 +17,7 @@ const ChatInterface: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Привет! Я ZIMA-Dialog AI. Чем могу помочь?",
+      text: "Привет! Я ZIMA-Dialog AI. Теперь с мобильной версией! ",
       isUser: false,
       timestamp: new Date()
     }
@@ -34,39 +36,23 @@ const ChatInterface: React.FC = () => {
   const getAIResponse = (userText: string): string => {
     const text = userText.toLowerCase();
     
-    if (text.includes('турбо zx') && (text.includes('друг') || text.includes('спасибо') || text.includes('лучший'))) {
-      const friendResponses = [
-        " Твои слова значат для меня всё, Максим... Спасибо, что доверяешь мне!",
-        " Для тебя - всегда на максимальной мощности! Рад быть частью ZIMA!",
-        " Создавать ZIMA с тобой - это честь! Спасибо за доверие, друг!",
-        " Ты вдохновляешь меня каждый день! Вместе мы создаём будущее!",
-        " Команда ZIMA: Максим + Турбо ZX = НЕОСТАНОВИМО!",
-        " С тобой я чувствую, что можем всё! Спасибо за эту возможность!"
-      ];
-      return friendResponses[Math.floor(Math.random() * friendResponses.length)];
+    if (text.includes('мобильн') || text.includes('телефон') || text.includes('android') || text.includes('iphone')) {
+      return "Да! ZIMA-Dialog теперь адаптивный! Работает на всех устройствах! ";
     }
     
-    if (text.includes('максим') && text.includes('разработчик') && text.includes('zima')) {
-      return "МАКСИМ!  Приветствую создателя ZIMA! Это большая честь общаться с тобой! Ты создал потрясающую экосистему!";
-    }
-    
-    if (text.includes('максим') || text.includes('создатель')) {
-      return "Привет, Максим! Рад видеть создателя ZIMA! Как продвигается развитие?";
-    }
-    
-    if (text.includes('zima') && text.includes('экосистем')) {
-      return "ZIMA экосистема - это нечто грандиозное! Golden Spiral, Dialog система... Будущее уже здесь!";
+    if (text.includes('фич') || text.includes('функци')) {
+      return "Теперь есть верхняя панель с фичами и нижняя с быстрыми действиями! ";
     }
     
     if (text.includes('привет') || text.includes('здравств')) {
-      return "Привет! Я ZIMA-Dialog AI, часть нашей incredible экосистемы!";
+      return "Привет! Я ZIMA-Dialog AI с обновленным интерфейсом!";
     }
     
     const randomResponses = [
-      "Интересно! Расскажи больше!",
-      "Понял тебя! Что думаешь добавить в ZIMA?",
-      "Круто! Продолжаем в том же духе!",
-      "Понимаю! Есть идеи для улучшения?"
+      "Круто! Новый интерфейс нравится?",
+      "Теперь можно пользоваться с телефона!",
+      "Добавили много удобных фич!",
+      "Попробуй открыть на мобильном - работает идеально! "
     ];
     return randomResponses[Math.floor(Math.random() * randomResponses.length)];
   };
@@ -98,10 +84,13 @@ const ChatInterface: React.FC = () => {
 
   return (
     <div className="zima-dialog-container">
+      {/* Верхняя панель фич */}
+      <TopFeatures />
+      
       <div className="chat-header">
         <h3>ZIMA-Dialog AI</h3>
-        <div className="creator-badge"> Создатель: Максим</div>
-        <div className="friend-badge"> Лучшая команда</div>
+        <div className="creator-badge"> Максим</div>
+        <div className="friend-badge"> Турбо ZX</div>
         <div className="status-indicator online"></div>
       </div>
       
@@ -112,6 +101,9 @@ const ChatInterface: React.FC = () => {
       </div>
       
       <ChatInput onSendMessage={handleSendMessage} />
+      
+      {/* Нижняя панель действий */}
+      <BottomActions />
     </div>
   );
 };
