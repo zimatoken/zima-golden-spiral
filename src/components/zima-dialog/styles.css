@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/* ZIMA-Dialog FINAL  ICE-GLASS PREMIUM (Адаптировано под наш код) */
 :root {
   --bg-00: #030716;
@@ -77,6 +78,97 @@
   font-size: 12px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
+=======
+﻿/* ===========================
+   ZIMA HYBRID ICE/DARK UI
+   by ADEPТ x MAXIM x Turbo ZX
+   =========================== */
+
+/* Глобальный фон */
+.zima-dialog-container {
+  background: radial-gradient(circle at 20% 20%, #0f172a 0%, #0b1220 40%, #070b13 80%);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 0 60px rgba(0, 150, 255, 0.15);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Верхняя панель фич */
+.top-features {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 0 10px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+}
+
+.feature-icon {
+  font-size: 1rem;
+}
+
+.feature-text {
+  font-size: 0.6rem;
+  color: #94A3B8;
+  text-align: center;
+  line-height: 1;
+}
+
+/* HEADER */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-header h3 {
+  color: #e3f6ff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Значки */
+.creator-badge,
+.friend-badge {
+  padding: 2px 6px;
+  font-size: 0.6rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #b4e2ff;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.online {
+  background: radial-gradient(circle, #4dffdd, #00d4b4);
+  box-shadow: 0 0 8px #00d4b4;
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
 }
 
 /* Body layout - для нашего zima-body */
@@ -85,6 +177,7 @@
   grid-template-columns: 1fr 360px;
   gap: 16px;
   flex: 1;
+<<<<<<< HEAD
   min-height: 0;
 }
 
@@ -209,6 +302,75 @@
   margin-top: 8px;
   font-size: 11px;
   color: var(--muted);
+=======
+  overflow-y: auto;
+  padding: 0 4px;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: rgba(180, 225, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* AI Message (светлый лед) */
+.ai-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 14px;
+  background: rgba(180, 235, 255, 0.15);
+  backdrop-filter: blur(12px) saturate(170%);
+  border: 1px solid rgba(200, 240, 255, 0.2);
+  box-shadow: 0 0 20px rgba(140, 200, 255, 0.15);
+  color: #eaffff;
+  align-self: flex-start;
+}
+
+/* USER Message (темный глубокий) */
+.user-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  margin: 6px 0;
+  align-self: flex-end;
+  border-radius: 14px;
+  background: rgba(20, 30, 48, 0.65);
+  backdrop-filter: blur(10px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 25px rgba(0, 80, 150, 0.25);
+  color: #cbe9ff;
+}
+
+/* Message bubbles */
+.message-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  position: relative;
+  animation: messageAppear 0.3s ease-out;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-content {
+  margin-bottom: 2px;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.message-time {
+  font-size: 0.6rem;
+  opacity: 0.7;
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
   text-align: right;
 }
 
@@ -217,6 +379,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+<<<<<<< HEAD
   padding: 12px;
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
@@ -226,6 +389,74 @@
 .input-bar input[type="text"] {
   flex: 1;
   padding: 12px 14px;
+=======
+  gap: 6px;
+  padding: 8px 12px;
+  align-self: flex-start;
+  background: rgba(8, 23, 43, 0.8);
+  border: 1px solid rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.typing-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #88D7FF;
+  animation: typingBounce 1.4s ease-in-out infinite both;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+.typing-text {
+  font-size: 0.7rem;
+  color: #94A3B8;
+}
+
+/* INPUT ZONE */
+.chat-input-container {
+  padding: 12px 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d6f1ff;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+  border-color: rgba(0, 157, 255, 0.6);
+}
+
+.chat-input::placeholder {
+  color: rgba(200, 230, 255, 0.35);
+}
+
+.send-button {
+  padding: 10px 14px;
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
   border-radius: 10px;
   background: rgba(255,255,255,0.02);
   color: var(--ice-100);
@@ -243,7 +474,14 @@
   border: none;
   box-shadow: 0 10px 30px rgba(0,165,255,0.14);
   cursor: pointer;
+<<<<<<< HEAD
   transition: transform 160ms ease, box-shadow 160ms ease;
+=======
+  box-shadow: 0 0 15px rgba(0, 145, 255, 0.4);
+  transition: 0.18s ease;
+  font-size: 0.9rem;
+  min-width: 50px;
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
 }
 
 .btn-send:hover {
@@ -251,6 +489,7 @@
   box-shadow: 0 14px 40px rgba(0,165,255,0.22);
 }
 
+<<<<<<< HEAD
 /* Badges - для наших бейджей */
 .badge {
   background: rgba(170,230,255,0.07);
@@ -260,6 +499,60 @@
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
+=======
+/* Нижняя панель действий */
+.bottom-actions {
+  padding: 8px 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 8px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 0 10px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  color: #b4e2ff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  font-size: 0.7rem;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.action-icon {
+  font-size: 1rem;
+}
+
+.action-text {
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+/* Анимации */
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
 }
 
 /* Typing indicator - для нашего typing */
@@ -269,6 +562,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .typing .dot {
   width: 8px;
   height: 8px;
@@ -303,4 +597,341 @@
   .zima-body { grid-template-columns: 1fr; }
   .avatar { width: 38px; height: 38px; }
   .zima-card { height: 92vh; }
+=======
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .zima-dialog-container {
+    border-radius: 0;
+    padding: 8px;
+    height: 100vh;
+    box-shadow: none;
+    border: none;
+  }
+
+  .features-grid,
+  .actions-grid {
+    padding: 0 5px;
+    gap: 2px;
+  }
+  
+  .feature-text,
+  .action-text {
+    font-size: 0.55rem;
+  }
+  
+  .chat-header {
+    padding: 6px 0;
+  }
+  
+  .chat-header h3 {
+    font-size: 0.9rem;
+  }
+  
+  .ai-message,
+  .user-message {
+    max-width: 90%;
+    padding: 8px 12px;
+    margin: 4px 0;
+  }
+  
+  .message-content {
+    font-size: 0.85rem;
+  }
+  
+  .chat-input {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+>>>>>>> 58bd34445df5b15ea890f991b1ac73326f0bf8a8
 }
+
+@import './mobile-styles.css';
+
+
+/* ===========================
+   ZIMA-Dialog NEXT GEN STYLES
+   =========================== */
+
+/* ZIMA-Dialog NEXT GEN — ICE GLASS PREMIUM
+   Dark Quant background + Ice Glass message bubbles
+   Fonts recommended: Inter for UI, JetBrains Mono for monospace if needed
+*/
+
+/* Root page container — should be applied to the page or main wrapper */
+.zima-next-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(6,18,32,0.55), transparent 6%),
+              radial-gradient(900px 500px at 95% 85%, rgba(0,45,80,0.18), transparent 8%),
+              linear-gradient(180deg,#041021 0%, #060914 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #e7f9ff;
+}
+
+/* Main dialog card */
+.zima-card {
+  width: min(1180px, 96%);
+  max-width: 1280px;
+  height: min(720px, 82vh);
+  border-radius: 18px;
+  padding: 18px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(10,16,28,0.72), rgba(8,12,20,0.62));
+  border: 1px solid rgba(180,230,255,0.04);
+  box-shadow:
+    0 8px 30px rgba(2,10,20,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Top navigation / ribbons */
+.zima-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:8px 12px;
+  margin-bottom:8px;
+}
+.zima-top .ribbons { display:flex; gap:10px; align-items:center; }
+.ribbon {
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  background: linear-gradient(180deg, rgba(10,18,28,0.36), rgba(255,255,255,0.02));
+  border: 1px solid rgba(180,230,255,0.04);
+  color:#bfeaff;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+}
+
+/* Header with title + small badges */
+.zima-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.zima-title {
+  font-weight:700;
+  font-size:20px;
+  color: #dff7ff;
+  letter-spacing: 0.4px;
+}
+.zima-badges { display:flex; gap:8px; align-items:center; margin-left:8px; }
+.badge {
+  background: rgba(170,230,255,0.07);
+  border: 1px solid rgba(200,240,255,0.06);
+  color: #c7f0ff;
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+}
+
+/* chat area layout */
+.zima-body {
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:16px;
+  flex:1;
+  min-height:0;
+}
+
+/* Left: messages panel */
+.zima-chat {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%);
+  border-radius: 14px;
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:0;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* messages list scroll area */
+.messages {
+  flex:1;
+  overflow:auto;
+  padding-right:8px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  scroll-behavior:smooth;
+}
+
+/* custom scrollbar thin & frosty */
+.messages::-webkit-scrollbar { width:8px; }
+.messages::-webkit-scrollbar-track { background: transparent; }
+.messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(160,220,255,0.12), rgba(120,200,255,0.06));
+  border-radius:8px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* Bubble base styles */
+.msg-row { display:flex; align-items:flex-end; gap:10px; max-width:100%; }
+.msg-bubble {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 14px;
+  line-height:1.35;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.02);
+  max-width: 78%;
+  word-break: break-word;
+  transition: transform 160ms cubic-bezier(.2,.9,.3,1), box-shadow 160ms;
+}
+
+/* ICE GLASS PREMIUM  AI bubble (left side) */
+.msg-ai {
+  align-self:flex-start;
+  color: #ffffff;
+  background:
+    linear-gradient(180deg, rgba(220,245,255,0.34), rgba(200,235,255,0.30));
+  border: 1px solid rgba(200,240,255,0.28);
+  box-shadow:
+    0 6px 18px rgba(40,150,240,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.32);
+  /* subtle frosted texture with overlay */
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+    radial-gradient(800px 200px at 10% 10%, rgba(255,255,255,0.02), transparent 6%);
+}
+
+/* inner glow / shine */
+.msg-ai::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  pointer-events: none;
+  box-shadow: 0 0 30px rgba(130,210,255,0.07);
+  mix-blend-mode: screen;
+}
+
+/* USER bubble (right side)  dark and dense */
+.msg-user {
+  margin-left:auto;
+  align-self:flex-end;
+  color: #ffffff;
+  background: linear-gradient(180deg, rgba(7,12,20,0.84), rgba(10,16,28,0.9));
+  border: 1px solid rgba(90,130,180,0.06);
+  box-shadow:
+    0 6px 26px rgba(0,40,80,0.55),
+    inset 0 -1px 0 rgba(255,255,255,0.02);
+}
+
+/* small timestamp under bubble */
+.msg-meta {
+  font-size:11px;
+  color: rgba(200,230,255,0.54);
+  margin-top:8px;
+  text-align:right;
+}
+
+/* avatar circles (pure CSS spheres) */
+.avatar {
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  flex: 0 0 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:visible;
+}
+
+/* AI avatar  icy sphere */
+.avatar-ai {
+  background: radial-gradient(circle at 30% 25%, #f4ffff, #bfeeff 30%, #8fcfff 60%, rgba(120,190,255,0.14) 100%);
+  border: 1px solid rgba(220,250,255,0.5);
+  box-shadow: 0 6px 18px rgba(100,210,255,0.08), inset 0 -6px 18px rgba(255,255,255,0.12);
+}
+
+/* user avatar  dark graphite sphere */
+.avatar-user {
+  background: radial-gradient(circle at 30% 30%, #1b2430 0%, #0c1420 60%, rgba(8,12,16,1) 100%);
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 2px 8px rgba(255,255,255,0.02);
+}
+
+/* subtle icon or initials (small) inside avatars */
+.avatar .initials {
+  font-size:12px;
+  font-weight:700;
+  color: #ffffff;
+}
+
+/* Input bar  frosted capsule */
+.input-bar {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* input field */
+.input-bar input[type="text"] {
+  flex:1;
+  padding:12px 14px;
+  background: rgba(255,255,255,0.02);
+  color: #dff7ff;
+  border-radius:10px;
+  border: 1px solid rgba(255,255,255,0.02);
+  outline:none;
+}
+
+/* send button  neon icy */
+.btn-send {
+  padding:10px 14px;
+  border-radius:10px;
+  background: linear-gradient(135deg,#00a5ff,#6bd2ff);
+  color: #021428;
+  font-weight:800;
+  border:none;
+  box-shadow: 0 8px 30px rgba(50,180,255,0.14);
+  cursor:pointer;
+}
+
+/* Typing indicator style (small) */
+.typing {
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+.typing .dot {
+  width:8px; height:8px; border-radius:50%;
+  background: linear-gradient(180deg,#bff0ff,#8fd6ff);
+  opacity:0.28;
+  animation: dotPulse 1s infinite ease-in-out;
+}
+.typing .dot:nth-child(2){ animation-delay:0.18s; }
+.typing .dot:nth-child(3){ animation-delay:0.36s; }
+
+@keyframes dotPulse {
+  0% { transform: translateY(0); opacity:0.22; }
+  50% { transform: translateY(-6px); opacity:1; }
+  100% { transform: translateY(0); opacity:0.22; }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .zima-body { grid-template-columns: 1fr; }
+  .zima-card { height: 90vh; }
+  .avatar { width:36px; height:36px; }
+  .btn-send { padding:8px 12px; }
+}
+
+
