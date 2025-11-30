@@ -1,0 +1,8 @@
+﻿// ДЛЯ БЫСТРОГО ТЕСТА ДОБАВЬТЕ В ЛЮБОЙ КОМПОНЕНТ:
+
+import { ZimaDialogTest } from "../components/ZimaDialogTest";
+
+// И в render/return:
+<ZimaDialogTest />
+
+// ИЛИ ПРОСТО В КОНЦЕ FilesPage.tsx перед закрывающим тегом

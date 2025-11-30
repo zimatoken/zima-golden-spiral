@@ -1,0 +1,15 @@
+﻿// ДОБАВИТЬ В НАЧАЛО ФАЙЛА (с другими импортами):
+import ZimaDialogTab from '../components/ZimaDialogTab';
+
+// НАЙТИ МЕСТО С ВКЛАДКАМИ (обычно где-то в return):
+// ДОБАВИТЬ НОВУЮ ВКЛАДКУ:
+
+// Пример того, что нужно найти и дополнить:
+// {activeTab === "files" && <FileManager />}
+// {activeTab === "spiral" && <GoldenSpiral />}
+
+// ДОБАВИТЬ ПОСЛЕ СУЩЕСТВУЮЩИХ ВКЛАДОК:
+{activeTab === "dialog" && <ZimaDialogTab />}
+
+// ЕСЛИ ЕСТЬ ПЕРЕКЛЮЧАТЕЛЬ ВКЛАДОК (TABS), ДОБАВИТЬ ТАМ:
+// <button onClick={() => setActiveTab("dialog")}>ZIMA-Dialog</button>

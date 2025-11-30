@@ -1,244 +1,306 @@
-﻿/* ===========================
-   ZIMA HYBRID ICE/DARK UI
-   by ADEPТ x MAXIM x Turbo ZX
-   =========================== */
-
-/* Глобальный фон */
-.zima-dialog-container {
-  background: radial-gradient(circle at 20% 20%, #0f172a 0%, #0b1220 40%, #070b13 80%);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 0 60px rgba(0, 150, 255, 0.15);
-  backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+﻿/* ZIMA-Dialog FINAL  ICE-GLASS PREMIUM (Адаптировано под наш код) */
+:root {
+  --bg-00: #030716;
+  --bg-01: #071021;
+  --ice-100: #eaffff;
+  --ice-80: rgba(230,255,255,0.8);
+  --ice-40: rgba(180,230,255,0.4);
+  --ice-16: rgba(180,230,255,0.16);
+  --glass-border: rgba(195,240,255,0.08);
+  --glass-strong: rgba(200,240,255,0.28);
+  --muted: rgba(200,220,240,0.48);
+  --accentA: #00b8ff;
+  --accentB: #6bd6ff;
+  --shadow: 0 12px 40px rgba(2,8,18,0.65);
 }
 
-/* HEADER */
-.chat-header {
+/* Page wrapper - для нашего zima-next-root */
+.zima-next-root {
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 36px;
+  background:
+    radial-gradient(800px 400px at 8% 10%, rgba(0,60,100,0.11), transparent 6%),
+    radial-gradient(600px 300px at 95% 85%, rgba(0,30,60,0.08), transparent 6%),
+    linear-gradient(180deg, var(--bg-00) 0%, var(--bg-01) 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--ice-100);
+}
+
+/* Card - для нашего zima-card */
+.zima-card {
+  width: min(1200px, 96%);
+  max-width: 1280px;
+  height: min(760px, 86vh);
+  border-radius: 18px;
+  padding: 18px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(8,14,24,0.72), rgba(6,10,18,0.6));
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  padding-bottom: 12px;
-  margin-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
 }
 
-.chat-header h3 {
-  color: #e3f6ff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+/* Top row - для нашего zima-top */
+.zima-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
 }
 
-/* Значки */
-.creator-badge,
-.friend-badge {
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #b4e2ff;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.zima-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(230,250,255,0.98);
 }
 
-.status-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.ribbons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
-.status-indicator.online {
-  background: radial-gradient(circle, #4dffdd, #00d4b4);
-  box-shadow: 0 0 10px #00d4b4;
+.ribbon {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(10,18,28,0.35), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
-/* MESSAGES ZONE */
-.messages-container {
+/* Body layout - для нашего zima-body */
+.zima-body {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
   flex: 1;
-  overflow-y: auto;
-  padding-right: 4px;
+  min-height: 0;
+}
+
+/* Chat panel - для нашего zima-chat */
+.zima-chat {
+  border-radius: 14px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 40%);
+  border: 1px solid rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 12px;
+}
+
+/* Messages area - для нашего messages */
+.messages {
+  flex: 1;
+  overflow: auto;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   scroll-behavior: smooth;
 }
 
-.messages-container::-webkit-scrollbar {
-  width: 6px;
+/* Thin frosty scrollbar */
+.messages::-webkit-scrollbar { width: 8px; }
+.messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(140,200,255,0.12), rgba(140,200,255,0.06));
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
 }
 
-.messages-container::-webkit-scrollbar-thumb {
-  background: rgba(180, 225, 255, 0.2);
-  border-radius: 4px;
+/* Message row - для нашего msg-row */
+.msg-row { 
+  display: flex; 
+  gap: 12px; 
+  align-items: flex-end; 
+  max-width: 100%; 
 }
 
-/* AI Message (светлый лед) */
-.ai-message {
-  max-width: 80%;
-  padding: 12px 16px;
-  margin: 10px 0;
-  border-radius: 14px;
-  background: rgba(180, 235, 255, 0.15);
-  backdrop-filter: blur(12px) saturate(170%);
-  border: 1px solid rgba(200, 240, 255, 0.2);
-  box-shadow: 0 0 20px rgba(140, 200, 255, 0.15);
-  color: #eaffff;
-  align-self: flex-start;
-}
-
-/* USER Message (темный глубокий) */
-.user-message {
-  max-width: 80%;
-  padding: 12px 16px;
-  margin: 10px 0;
-  align-self: flex-end;
-  border-radius: 14px;
-  background: rgba(20, 30, 48, 0.65);
-  backdrop-filter: blur(10px) saturate(170%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 25px rgba(0, 80, 150, 0.25);
-  color: #cbe9ff;
-}
-
-/* Message bubbles */
-.message-bubble {
-  max-width: 70%;
-  padding: 12px 16px;
-  border-radius: 18px;
-  position: relative;
-  animation: messageAppear 0.3s ease-out;
-}
-
-.message-list {
+/* Avatar - для нашего avatar */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex: 0 0 44px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(2,10,30,0.3);
 }
 
-.message-content {
-  margin-bottom: 4px;
-  line-height: 1.4;
+.avatar-ai {
+  background: radial-gradient(circle at 30% 25%, #fbffff 0%, #dff7ff 22%, #a9e3ff 60%, rgba(120,200,255,0.14) 100%);
+  border: 1px solid var(--glass-strong);
 }
 
-.message-time {
+.avatar-user {
+  background: radial-gradient(circle at 25% 25%, #11151B 0%, #091021 60%, rgba(5,8,12,1) 100%);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* Bubble base - для нашего msg-bubble */
+.msg-bubble {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.36;
+  max-width: 78%;
+  word-break: break-word;
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  backdrop-filter: blur(8px) saturate(150%);
+}
+
+/* AI bubble: ICE GLASS PREMIUM */
+.msg-ai {
+  background: linear-gradient(180deg, rgba(245,255,255,0.36), rgba(220,250,255,0.30));
+  color: #03161b;
+  border: 1px solid var(--glass-strong);
+  box-shadow: 0 8px 28px rgba(0,110,180,0.06),
+              inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.msg-ai::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  box-shadow: 0 0 28px rgba(120,200,255,0.06);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Small frost texture overlay (subtle) */
+.msg-ai::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: radial-gradient(400px 120px at 8% 12%, rgba(255,255,255,0.02), transparent 6%), 
+              linear-gradient(180deg, rgba(255,255,255,0.01), transparent 30%);
+  border-radius: 14px;
+  pointer-events: none;
+  opacity: 0.98;
+}
+
+/* USER bubble: dark dense */
+.msg-user {
+  margin-left: auto;
+  background: linear-gradient(180deg, rgba(10,14,20,0.86), rgba(6,10,16,0.9));
+  color: var(--ice-100);
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 10px 30px rgba(0,30,60,0.55);
+}
+
+/* Micro timestamp - для нашего msg-meta */
+.msg-meta {
+  margin-top: 8px;
   font-size: 11px;
-  opacity: 0.7;
+  color: var(--muted);
   text-align: right;
 }
 
-/* Typing indicator */
-.typing-indicator {
+/* Input bar - для нашего input-bar */
+.input-bar {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  align-self: flex-start;
-  background: rgba(8, 23, 43, 0.8);
-  border: 1px solid rgba(30, 41, 59, 0.8);
-  border-radius: 18px;
-  border-bottom-left-radius: 4px;
-}
-
-.typing-dots {
-  display: flex;
-  gap: 4px;
-}
-
-.typing-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #88D7FF;
-  animation: typingBounce 1.4s ease-in-out infinite both;
-}
-
-.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
-.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
-
-.typing-text {
-  font-size: 12px;
-  color: #94A3B8;
-}
-
-/* INPUT ZONE */
-.chat-input-container {
-  padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(8, 23, 43, 0.8);
-}
-
-.input-wrapper {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.chat-input {
-  flex: 1;
-  padding: 12px 16px;
+  padding: 12px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #d6f1ff;
-  outline: none;
-  font-size: 14px;
-  transition: border-color 0.2s;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
 }
 
-.chat-input:focus {
-  border-color: rgba(0, 157, 255, 0.6);
-}
-
-.chat-input::placeholder {
-  color: rgba(200, 230, 255, 0.35);
-}
-
-.send-button {
-  padding: 12px 16px;
+.input-bar input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #009dff, #6acbff);
+  background: rgba(255,255,255,0.02);
+  color: var(--ice-100);
+  border: 1px solid rgba(255,255,255,0.02);
+  outline: none;
+}
+
+/* Send button - для нашего btn-send */
+.btn-send {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accentA), var(--accentB));
+  color: #021427;
+  font-weight: 800;
   border: none;
-  color: #ffffff;
-  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,165,255,0.14);
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 145, 255, 0.4);
-  transition: 0.18s ease;
-  font-size: 16px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.send-button:hover {
-  box-shadow: 0 0 25px rgba(0, 165, 255, 0.6);
-  transform: translateY(-1px);
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0,165,255,0.22);
 }
 
-/* Анимации */
-@keyframes messageAppear {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Badges - для наших бейджей */
+.badge {
+  background: rgba(170,230,255,0.07);
+  border: 1px solid rgba(200,240,255,0.06);
+  color: var(--ice-80);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-@keyframes typingBounce {
-  0%, 80%, 100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
+/* Typing indicator - для нашего typing */
+.typing {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
-@keyframes typingBlink {
-  0%, 100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-  }
+.typing .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #bff2ff, #8fd6ff);
+  opacity: 0.2;
+  animation: float 1s infinite ease-in-out;
+}
+
+.typing .dot:nth-child(2) { animation-delay: 0.16s; }
+.typing .dot:nth-child(3) { animation-delay: 0.32s; }
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.2; }
+}
+
+/* Subtle entrance for bubbles */
+.msg-bubble {
+  transform-origin: left bottom;
+  animation: bubbleIn 260ms cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes bubbleIn {
+  0% { transform: translateY(8px) scale(0.995); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .zima-body { grid-template-columns: 1fr; }
+  .avatar { width: 38px; height: 38px; }
+  .zima-card { height: 92vh; }
 }

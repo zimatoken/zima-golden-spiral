@@ -1,0 +1,21 @@
+﻿// === ИЗМЕНЕНИЯ ДЛЯ FilesPage.tsx ===
+
+// 1. ДОБАВИТЬ В ИМПОРТЫ (рядом с другими импортами):
+import ZimaDialogTab from "../components/ZimaDialogTab";
+
+// 2. НАЙТИ КОМПОНЕНТ FilesPage И ДОБАВИТЬ НОВУЮ ВКЛАДКУ В activeTab:
+// Обычно где-то есть что-то вроде:
+// const [activeTab, setActiveTab] = useState("files");
+
+// 3. НАЙТИ ПЕРЕКЛЮЧАТЕЛЬ ВКЛАДОК (TABS) И ДОБАВИТЬ КНОПКУ:
+// Пример:
+// <button onClick={() => setActiveTab("files")}>Файлы</button>
+// <button onClick={() => setActiveTab("spiral")}>Спираль</button>
+// ДОБАВИТЬ:
+// <button onClick={() => setActiveTab("dialog")}>ZIMA-Dialog</button>
+
+// 4. НАЙТИ ОТОБРАЖЕНИЕ КОНТЕНТА ВКЛАДОК И ДОБАВИТЬ:
+// {activeTab === "files" && ...}
+// {activeTab === "spiral" && ...}
+// ДОБАВИТЬ ПОСЛЕ:
+// {activeTab === "dialog" && <ZimaDialogTab />}

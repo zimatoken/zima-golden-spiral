@@ -1,0 +1,10 @@
+﻿// ЕСЛИ ИСПОЛЬЗУЕТЕ REACT ROUTER, ДОБАВЬТЕ В src/App.tsx или src/main.tsx:
+
+import ZimaDialogPage from './pages/ZimaDialogPage';
+
+// И в routes добавьте:
+<Route path="/dialog" element={<ZimaDialogPage />} />
+
+// ИЛИ ПРОСТО ЗАЙДИТЕ ПО АДРЕСУ:
+// http://localhost:5173/dialog (если добавили роут)
+// http://localhost:5173/src/pages/ZimaDialogPage.tsx (для прямого доступа)

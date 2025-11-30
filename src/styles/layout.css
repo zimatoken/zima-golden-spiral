@@ -1,0 +1,32 @@
+﻿/* === ZIMA MAIN LAYOUT === */
+.zima-main-layout {
+  display: flex;
+  height: 100vh;
+  background: 
+    radial-gradient(800px 400px at 8% 10%, rgba(0,60,100,0.11), transparent 6%),
+    radial-gradient(600px 300px at 95% 85%, rgba(0,30,60,0.08), transparent 6%),
+    linear-gradient(180deg, #030716 0%, #071021 100%);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.zima-content-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .zima-main-layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .zima-content-area {
+    padding: 10px;
+  }
+}
